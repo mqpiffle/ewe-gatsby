@@ -98,6 +98,7 @@
   font-size: clamp(.75rem, 2vw, 1rem);
   font-weight: 600;
   padding-block: 7%;
+  margin-inline: auto;
 }
 
 .ec-event-pips-grid {
