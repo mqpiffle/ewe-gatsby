@@ -8,6 +8,6 @@ header {
 header>h1 {
   padding: 3%;
   color: hsl(38 74% 56%);
-  text-shadow: 1px 1px 5px hsl(60 66% 89% / .5);
+  text-shadow: 1px 2px 5px hsl(60 66% 89% / .5);
   cursor: pointer;
 }
