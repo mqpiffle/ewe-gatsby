@@ -1,0 +1,118 @@
+.ec-wrapper {
+  width: 100%;
+  padding-block: 1.5%;
+}
+
+.ec-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-block: 1.5%;
+}
+
+.ec-title-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: 1rem;
+  color: hsl(38 74% 56%);
+}
+
+.ec-description {
+  width: min(65ch, 100%);
+  margin-inline: auto;
+  line-height: 1.25;
+}
+
+.ec-description>p {
+  padding-block: .25rem;
+}
+
+.ec-calendar-wrapper {
+  padding-block: 3%;
+}
+
+.ec-month-carousel {
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-inline: auto;
+  padding: .5rem;
+  border-radius: .5rem;
+  background-color: hsl(198 99% 7%);
+}
+
+.ec-month-year {
+  width: 15rem;
+  padding-inline: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ec-icon {
+  margin: .25rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border-radius: .25rem;
+  background-color: hsl(198 99% 9%);
+}
+
+.ec-icon:hover {
+  background-color: hsl(198 99% 18%);
+}
+
+.ec-calendar-grid {
+  width: min(960px, 97%);
+  margin-inline: auto;
+  padding-block: 2rem;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: clamp(.125rem, 1vw + .125rem, 1rem);
+  list-style: none;
+}
+
+.ec-date-wrapper {
+  container-type: inline-size;
+}
+
+.ec-date-card {
+  display: flex;
+  flex-direction: column;
+  height: 100cqi;
+  border: 3px solid hsl(198, 99%, 27%);
+  background-color: hsl(198, 99%, 18%);
+  border-radius: .5rem;
+  cursor: pointer;
+}
+
+.ec-date-card:hover {
+  background-color: hsl(198 99% 36%) !important;
+}
+
+.ec-date-number {
+  font-size: clamp(.75rem, 2vw, 1rem);
+  font-weight: 600;
+  padding-block: 7%;
+}
+
+.ec-event-pips-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.ec-event-pips-icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.ec-event-pips-icon {
+  padding: 0;
+  font-size: .25rem;
+}

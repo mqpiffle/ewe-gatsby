@@ -12,7 +12,7 @@ module.exports = {
     "gatsby-plugin-mdx", 
     "gatsby-plugin-sharp", 
     "gatsby-transformer-sharp",
-    "gatsby-transformer-remark", 
+    "gatsby-transformer-remark",
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -31,9 +31,9 @@ module.exports = {
     },
     { resolve: 'gatsby-source-strapi',
       options: {
-        apiURL: process.env.STRAPI_API_TOKEN,
-        accessToken: proccess.env.STRAPI_TOKEN,
-        collectionTypes: [],
+        apiURL: process.env.STRAPI_API_URL,
+        accessToken: process.env.STRAPI_TOKEN,
+        collectionTypes: ['event'],
         singleTypes: [],
       },
     },
