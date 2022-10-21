@@ -20,8 +20,8 @@ const EventCalendar = () => {
           node {
             description
             description_2
-            start_date_time(formatString: "YYYY-MM-D H:mm UT")
-            end_date_time(formatString: "YYYY-MM-D H:mm UT")
+            start_date_time
+            end_date_time
             location_name
             location_address
             location_website
@@ -32,32 +32,33 @@ const EventCalendar = () => {
   `)
     
   const events = data.allStrapiEvent.edges
-  const eventDateArray = events.map(({node}) => node.start_date_time.split(" ", 1).toString())
+  const eventDateArray = events.map(({node}) => node.start_date_time.split("T", 1).toString())
   
   const date = new Date()
   const thisYear = date.getUTCFullYear()
   const thisMonth = date.getUTCMonth()
   const thisDate = date.getUTCDate()            
-  const today = `${thisYear}-${thisMonth+1}-${thisDate}`
+  const today = new Date(`${thisYear}-${thisMonth+1}-${thisDate}`).toISOString()
   const daysHeader = ["S", "M", "T", "W", "Th", "F", "Sa"]
-  console.log(thisDate)
   const [displayMonth, setDisplayMonth] = useState(thisMonth)
   const [displayYear, setDisplayYear] = useState(thisYear)
   const [activeDate, setActiveDate] = useState(today)
   const [dateClick, setDateClick] = useState(true)
 
-  console.log(activeDate)
-
   const monthStr = new Date(`${displayYear}`, `${displayMonth}`).toLocaleString('default', {month: 'long'})
   const daysInMonth = moment(`${displayYear}-${displayMonth+1}`, 'YYYY-MM').daysInMonth()
   const firstDayOfMonth = new Date(displayYear, displayMonth, 1).getDay()
 
-  const todaysEvents = events.filter(({node}) => {if (node.start_date_time.split(" ", 1).toString() === `${activeDate}`) {return node}})
-  const scrollRef = useRef(null)
+  const todaysEvents = events.filter(({node}) => {if (node.start_date_time.split("T", 1).toString() === activeDate.split("T", 1).toString()) {
+    return {node}
+    }
+  })
   
+  const scrollRef = useRef(null)
+
   useEffect(() => {
     todaysEvents.length > 0 && scrollRef.current.scrollIntoView()
-  }, [dateClick])
+  }, [dateClick, todaysEvents.length])
 
   let days = []
   for (let d=1; d <= daysInMonth; d++) {
@@ -137,23 +138,25 @@ const EventCalendar = () => {
             )}
           )}
           {days.map(date => {
-            const calendarDate = `${displayYear}-${displayMonth+1}-${date}`
+            const calendarDate = new Date(`${displayYear}-${displayMonth+1}-${date}`).toISOString()
             const dateClicked = () => {
               return calendarDate === activeDate
             }
             const colorForeground = () => {
               if (calendarDate === today) {
-                return 'hsl(29 74% 56%)'
+                return 'var(--clr-highlight'
               } else if (dateClicked()) {
-                return 'hsl(198 99% 72%)'
+                return 'var(--clr-bg-xlight)'
               } else {
-                return 'hsl(60 66% 89%)'}
+                return 'var(--clr-text)'
               }
+            }
             const colorBackground = () => {
               if (dateClicked()) {
-                return 'hsl(198 99% 36%)'
+                return 'var(--clr-mlight)'
               } else {
-                return 'hsl(198 99% 18%)'}
+                return 'var(--clr-mdark)'
+              }
             }
           return (
             <li
@@ -174,14 +177,14 @@ const EventCalendar = () => {
                 </p>
                 <div className="ec-event-pips-grid">
                 {eventDateArray.map((e, i) => {
-                  if (e === calendarDate) {
+                  if (e === calendarDate.split("T", 1).toString()) {
                     return (
                       <div key={i} className="ec-event-pips-icon-container">
                         <Icon
                           className="ec-event-pips-icon"
                           path={mdiStar}
                           size={.66}
-                          color={dateClicked() ? "darkgreen" : "limegreen"}
+                          color={dateClicked() ? "var(--clr-visited)" : "var(--clr-highlight)"}
                         />
                       </div>
                     )}

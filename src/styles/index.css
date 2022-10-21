@@ -6,6 +6,20 @@
     padding: 0;
 }
 
+:root {
+    --clr-bg-vdark: hsl(198 99% 7%);
+    --clr-bg-dark: hsl(198 99% 9%);
+    --clr-bg-mdark: hsl(198 99% 18%);
+    --clr-bg-med: hsl(198, 99%, 27%);
+    --clr-bg-mlight: hsl(198 99% 36%);
+    --clr-bg-light: hsl(198 99% 45%);
+    --clr-bg-vlight: hsl(198 99% 54%);
+    --clr-bg-xlight: hsl(198 99% 72%);
+    --clr-text: hsl(60, 66%, 89%);
+    --clr-highlight: hsl(29 74% 56%);
+    --clr-visited: hsl(276 56% 38%);
+}
+
 html {
     width: 100vw;
     font-family: "Courier New", serif;
@@ -15,8 +29,8 @@ html {
 
 body {
     width: 100%;
-    color: hsl(60, 66%, 89%);
-    background-color: hsl(198 99% 9%);
+    color: var(--clr-text);
+    background-color: var(--clr-bg-dark);
     overflow-x: hidden;
 }
 
@@ -31,15 +45,15 @@ body {
     margin-inline: auto;
     padding: 3%;
     text-align: center;
-    background-color: hsl(198 99% 7%);
-    border: 3px solid hsl(198 99% 18%);
+    background-color: var(--clr-bg-xdark);
+    border: 3px solid var(--clr-bg-mdark);
     border-radius: .5rem;
 }
 
 a:link {
-    color: hsl(29 74% 56%);
+    color: var(--clr-highlight);
 }
 
 a:visited {
-    color: hsl(276 56% 38%)
+    color: var(--clr-visited);
 }
