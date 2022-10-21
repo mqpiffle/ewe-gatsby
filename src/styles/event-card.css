@@ -1,0 +1,13 @@
+.ecard-wrapper {
+  width: min(640px, 97%);
+  margin-inline: auto;
+  margin-block: 1rem;
+  padding: .5rem;
+  line-height: 1.5;
+  background: linear-gradient(to right, hsl(198 99% 18%), hsl(198 99% 9%));
+}
+
+.ecard-wrapper>h3 {
+  color: hsl(29 74% 56%);
+  font-weight: 700;
+}

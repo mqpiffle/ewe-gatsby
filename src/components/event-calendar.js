@@ -1,4 +1,4 @@
-import React, { useState, useEffect }from "react"
+import React, { useState, useEffect, useRef }from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import moment from "moment"
 import Icon from "@mdi/react"
@@ -20,8 +20,8 @@ const EventCalendar = () => {
           node {
             description
             description_2
-            start_date_time(formatString: "YYYY-MM-D h:mm")
-            end_date_time(formatString: "h:mm")
+            start_date_time(formatString: "YYYY-MM-D H:mm UT")
+            end_date_time(formatString: "YYYY-MM-D H:mm UT")
             location_name
             location_address
             location_website
@@ -30,26 +30,33 @@ const EventCalendar = () => {
       }
     }
   `)
-
+    
   const events = data.allStrapiEvent.edges
   const eventDateArray = events.map(({node}) => node.start_date_time.split(" ", 1).toString())
-
+  
   const date = new Date()
-  const thisYear = date.getFullYear()
-  const thisMonth = date.getMonth()
-  const thisDate = date.getDate()
+  const thisYear = date.getUTCFullYear()
+  const thisMonth = date.getUTCMonth()
+  const thisDate = date.getUTCDate()            
   const today = `${thisYear}-${thisMonth+1}-${thisDate}`
   const daysHeader = ["S", "M", "T", "W", "Th", "F", "Sa"]
-
+  console.log(thisDate)
   const [displayMonth, setDisplayMonth] = useState(thisMonth)
   const [displayYear, setDisplayYear] = useState(thisYear)
   const [activeDate, setActiveDate] = useState(today)
+  const [dateClick, setDateClick] = useState(true)
+
+  console.log(activeDate)
 
   const monthStr = new Date(`${displayYear}`, `${displayMonth}`).toLocaleString('default', {month: 'long'})
   const daysInMonth = moment(`${displayYear}-${displayMonth+1}`, 'YYYY-MM').daysInMonth()
   const firstDayOfMonth = new Date(displayYear, displayMonth, 1).getDay()
 
   const todaysEvents = events.filter(({node}) => {if (node.start_date_time.split(" ", 1).toString() === `${activeDate}`) {return node}})
+  const scrollRef = useRef(null)
+  useEffect(() => {
+    todaysEvents.length > 0 && scrollRef.current.scrollIntoView()
+  }, [dateClick])
 
   let days = []
   for (let d=1; d <= daysInMonth; d++) {
@@ -75,7 +82,8 @@ const EventCalendar = () => {
   }
 
   const handleDateClick = (date) => {
-    setActiveDate(date)  
+    setActiveDate(date)
+    setDateClick(!dateClick)
   }
   
   return (
@@ -91,7 +99,7 @@ const EventCalendar = () => {
       <div className="ec-description">
         <p>This Event Calendar component is my current web development project.  As such it is a work in progess.  The goal is to create a scratch-made &#127790; interactive display calendar.</p>
         <p>It is built with a stack of <a href="https://www.gatsbyjs.com/" target="_blank " rel="noreferrer">Gatsbyjs</a>, <a href="https://strapi.io/" target="_blank " rel="noreferrer">strapi CMS</a>, and is deployed to <a href="https://render.com/" target="_blank " rel="noreferrer">Render</a> (automatically updated when changes are pushed to GitHub), and is styled with 'vanilla' CSS.  moment.js is the only external library used in this project for its convenience when dealing with dates and times.</p>
-        <p>&#10024; Please note that cutting-edge CSS properties are used in this project. <strong><a href="https://caniuse.com/?search=container" target="_blank " rel="noreferrer">As of Oct 2022 @container queries are not supported by Firefox, and many mobile browsers.</a></strong></p>
+        <p>&#10024; Please note that cutting-edge CSS properties are used in this project. <a href="https://caniuse.com/?search=container" target="_blank " rel="noreferrer">As of Oct 2022 @container queries are not supported by Firefox, and many mobile browsers.</a></p>
       </div>
       <div className="ec-calendar-wrapper">
         <div className="ec-month-carousel">
@@ -112,7 +120,6 @@ const EventCalendar = () => {
             onClick={() => handleCarouselClick(true)}
           />
         </div>
-        
         <ul 
           className="ec-calendar-grid"
         >
@@ -135,7 +142,7 @@ const EventCalendar = () => {
             }
             const colorForeground = () => {
               if (calendarDate === today) {
-                return 'hsl(38 74% 56%)'
+                return 'hsl(29 74% 56%)'
               } else if (dateClicked()) {
                 return 'hsl(198 99% 72%)'
               } else {
@@ -184,17 +191,25 @@ const EventCalendar = () => {
             </li>
             )}
           )}
-          <div>
-            {todaysEvents.map(({node}, index) => {
-              return (
+        </ul>
+        <div ref={scrollRef}>
+          {todaysEvents.map(({node}, index) => {
+            return (
+              <div>
                 <EventCard
                   key={index}
-                  description={node.description}
+                  description1={node.description}
+                  description2={node.description_2}
+                  datestarttime={node.start_date_time}
+                  endtime={node.end_date_time}
+                  venuename={node.location_name}
+                  venueaddress={node.location_address}
+                  venuewebsite={node.location_website}
                 />
-              )}
+              </div>
             )}
-          </div>
-        </ul>
+          )}
+        </div>
       </div>
     </div>
   )
