@@ -54,6 +54,7 @@ const EventCalendar = () => {
 
   const todaysEvents = events.filter(({node}) => {if (node.start_date_time.split(" ", 1).toString() === `${activeDate}`) {return node}})
   const scrollRef = useRef(null)
+  
   useEffect(() => {
     todaysEvents.length > 0 && scrollRef.current.scrollIntoView()
   }, [dateClick])

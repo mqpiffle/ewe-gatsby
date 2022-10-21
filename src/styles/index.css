@@ -31,7 +31,7 @@ body {
     margin-inline: auto;
     padding: 3%;
     text-align: center;
-    background-color: hsl(198, 99%, 7%);
+    background-color: hsl(198 99% 7%);
     border: 3px solid hsl(198 99% 18%);
     border-radius: .5rem;
 }
