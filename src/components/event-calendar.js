@@ -7,7 +7,8 @@ import {mdiChevronDoubleLeft, mdiChevronDoubleRight, mdiCircle, mdiCalendarMonth
 import "../styles/event-calendar.css"
 import EventCard from "./event-card"
 
-/* TODO: fill in days @ end of prev month and/or start of next month */
+/* TODO: fill in days @ end of prev month and/or start of next month, maybe? */
+/* when the cal container size > 600px? show events with some detail on the day */
 /* TODO: Challenge: show events in the next row of the grid without upsetting the flow of the calendar */
 
 const EventCalendar = () => {
@@ -31,6 +32,8 @@ const EventCalendar = () => {
     
   const events = data.allStrapiEvent.edges
   const eventDateArray = events.map(({node}) => node.start_date_time.split("T", 1).toString())
+
+  console.log(eventDateArray)
   
   const date = new Date()
   const thisYear = date.getUTCFullYear()
@@ -139,9 +142,7 @@ const EventCalendar = () => {
           )}
           {days.map(date => {
             const calendarDate = new Date(`${displayYear}-${displayMonth+1}-${date}`).toISOString()
-            const dateClicked = () => {
-              return calendarDate === activeDate
-            }
+            const dateClicked = () => calendarDate === activeDate
             const colorForeground = () => {
               if (calendarDate === today) {
                 return 'var(--clr-highlight'
@@ -176,8 +177,8 @@ const EventCalendar = () => {
                   {date}
                 </p>
                 <div className="ec-event-pips-grid">
-                {eventDateArray.map((e, i) => {
-                  if (e === calendarDate.split("T", 1).toString()) {
+                {eventDateArray.map((event, i) => {
+                  if (event === calendarDate.split("T", 1).toString()) {
                     return (
                       <div key={i} className="ec-event-pips-icon-container">
                         <Icon
