@@ -2,14 +2,12 @@ import React, { useState, useEffect, useRef }from "react"
 import { useStaticQuery, graphql } from "gatsby"
 import moment from "moment"
 import Icon from "@mdi/react"
-import {mdiChevronDoubleLeft, mdiChevronDoubleRight, mdiHexagon, mdiStar, mdiCalendarMonth } from "@mdi/js"
+import {mdiChevronDoubleLeft, mdiChevronDoubleRight, mdiCircle, mdiCalendarMonth } from "@mdi/js"
 
 import "../styles/event-calendar.css"
 import EventCard from "./event-card"
 
-/* TODO: include localization */
 /* TODO: fill in days @ end of prev month and/or start of next month */
-/* TODO: statefully show events view under calendar in collapsable div */
 /* TODO: Challenge: show events in the next row of the grid without upsetting the flow of the calendar */
 
 const EventCalendar = () => {
@@ -49,8 +47,9 @@ const EventCalendar = () => {
   const daysInMonth = moment(`${displayYear}-${displayMonth+1}`, 'YYYY-MM').daysInMonth()
   const firstDayOfMonth = new Date(displayYear, displayMonth, 1).getDay()
 
-  const todaysEvents = events.filter(({node}) => {if (node.start_date_time.split("T", 1).toString() === activeDate.split("T", 1).toString()) {
-    return {node}
+  const todaysEvents = events.filter(({node}) => {
+    if (node.start_date_time.split("T", 1).toString() === activeDate.split("T", 1).toString()) {
+      return {node}
     }
   })
   
@@ -68,24 +67,24 @@ const EventCalendar = () => {
   const handleCarouselClick = (forward) => {
     if (forward === true) {
       if (displayMonth < 11) {
-      setDisplayMonth(displayMonth+1)
+      setDisplayMonth((dm) => dm + 1)
       } else {
         setDisplayMonth(0)
-        setDisplayYear(displayYear+1)
+        setDisplayYear((dy) => dy + 1)
       }
     } else {
       if (displayMonth > 0) {
-        setDisplayMonth(displayMonth-1)
+        setDisplayMonth((dm) => dm - 1)
       } else {
         setDisplayMonth(11)
-        setDisplayYear(displayYear-1)
+        setDisplayYear((dy) => dy - 1)
       }
     }
   }
 
   const handleDateClick = (date) => {
     setActiveDate(date)
-    setDateClick(!dateClick)
+    setDateClick((dc) => !dc)
   }
   
   return (
@@ -100,27 +99,28 @@ const EventCalendar = () => {
       </div> 
       <div className="ec-description">
         <p>This Event Calendar component is my current web development project.  As such it is a work in progess.  The goal is to create a scratch-made &#127790; interactive display calendar.</p>
-        <p>It is built with a stack of <a href="https://www.gatsbyjs.com/" target="_blank " rel="noreferrer">Gatsbyjs</a>, <a href="https://strapi.io/" target="_blank " rel="noreferrer">strapi CMS</a>, and is deployed to <a href="https://render.com/" target="_blank " rel="noreferrer">Render</a> (automatically updated when changes are pushed to GitHub), and is styled with 'vanilla' CSS.  moment.js is the only external library used in this project for its convenience when dealing with dates and times.</p>
-        <p>&#10024; Please note that cutting-edge CSS properties are used in this project. <a href="https://caniuse.com/?search=container" target="_blank " rel="noreferrer">As of Oct 2022 @container queries are not supported by Firefox, and many mobile browsers.</a></p>
+        <p>It is built with a stack of <a href="https://www.gatsbyjs.com/" target="_blank" rel="noreferrer">Gatsbyjs</a>, <a href="https://strapi.io/" target="_blank" rel="noreferrer">strapi CMS</a>, and is deployed to <a href="https://render.com/" target="_blank" rel="noreferrer">Render</a> (automatically updated when changes are pushed to GitHub), and is styled with 'vanilla' CSS.  The only external libraries used in this project are <a href="https://momentjs.com/" target="_blank" rel="noreferrer">moment.js</a> and <a href="https://www.npmjs.com/package/react-moment" target="_blank" rel="noreferrer">react-moment</a> for their convenience when dealing with dates and times, and <a href="https://materialdesignicons.com/" target="_blank" rel="noreferrer">Material Design Icons</a> for easy-to-use iconography.</p>
       </div>
       <div className="ec-calendar-wrapper">
         <div className="ec-month-carousel">
-          <Icon
-            className="ec-icon"
-            path={mdiChevronDoubleLeft}
-            size={1.25}
-            onClick={() => handleCarouselClick(false)}
-          />
+          <div className="ec-carousel-icon">
+            <Icon
+              path={mdiChevronDoubleLeft}
+              size={1.25}
+              onClick={() => handleCarouselClick(false)}
+            />
+          </div>
           <div className="ec-month-year">
             <h2 >{monthStr}</h2>
             <h3>{displayYear}</h3>
           </div>
-          <Icon
-            className="ec-icon"
-            path={mdiChevronDoubleRight}
-            size={1.25}
-            onClick={() => handleCarouselClick(true)}
-          />
+          <div className="ec-carousel-icon">
+            <Icon
+              path={mdiChevronDoubleRight}
+              size={1.25}
+              onClick={() => handleCarouselClick(true)}
+            />
+          </div>
         </div>
         <ul 
           className="ec-calendar-grid"
@@ -153,9 +153,9 @@ const EventCalendar = () => {
             }
             const colorBackground = () => {
               if (dateClicked()) {
-                return 'var(--clr-mlight)'
+                return 'var(--clr-bg-mlight)'
               } else {
-                return 'var(--clr-mdark)'
+                return 'var(--clr-bg-mdark)'
               }
             }
           return (
@@ -182,8 +182,8 @@ const EventCalendar = () => {
                       <div key={i} className="ec-event-pips-icon-container">
                         <Icon
                           className="ec-event-pips-icon"
-                          path={mdiStar}
-                          size={.66}
+                          path={mdiCircle}
+                          size={.5}
                           color={dateClicked() ? "var(--clr-visited)" : "var(--clr-highlight)"}
                         />
                       </div>

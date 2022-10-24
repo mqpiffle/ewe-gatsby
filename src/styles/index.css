@@ -7,17 +7,18 @@
 }
 
 :root {
-    --clr-bg-vdark: hsl(198 99% 7%);
+    --clr-bg-xdark: hsl(198 99% 7%);
     --clr-bg-dark: hsl(198 99% 9%);
     --clr-bg-mdark: hsl(198 99% 18%);
-    --clr-bg-med: hsl(198, 99%, 27%);
+    --clr-bg-med: hsl(198 99% 27%);
     --clr-bg-mlight: hsl(198 99% 36%);
     --clr-bg-light: hsl(198 99% 45%);
     --clr-bg-vlight: hsl(198 99% 54%);
     --clr-bg-xlight: hsl(198 99% 72%);
-    --clr-text: hsl(60, 66%, 89%);
+    --clr-text: hsl(60 66% 89%);
     --clr-highlight: hsl(29 74% 56%);
     --clr-visited: hsl(276 56% 38%);
+    --clr-shadow-light: hsl(60 66% 89% / .5);
 }
 
 html {

@@ -4,10 +4,10 @@
   margin-block: 1rem;
   padding: .5rem;
   line-height: 1.5;
-  background: linear-gradient(to right, hsl(198 99% 18%), hsl(198 99% 9%));
+  background: linear-gradient(to right, var(--clr-bg-med), var(--clr-bg-dark));
 }
 
 .ecard-wrapper>h3 {
-  color: hsl(29 74% 56%);
+  color: var(--clr-highlight);
   font-weight: 700;
 }

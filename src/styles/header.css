@@ -3,12 +3,12 @@ header {
   display: block;
   align-items: center;
   justify-content: center;
-  background-color: hsl(198 99% 7%);
+  background-color: var(--clr-bg-xdark);
 }
 
 header>h1 {
   padding: 3%;
-  color: hsl(29 74% 56%);
-  text-shadow: 1px 2px 5px hsl(60 66% 89% / .5);
+  color: var(--clr-highlight);
+  text-shadow: 1px 2px 5px var(--clr-shadow-light);
   cursor: pointer;
 }

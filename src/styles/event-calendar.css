@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   margin-inline: 1rem;
-  color: hsl(29 74% 56%);
+  color: var(--clr-highlight);
 }
 
 .ec-description {
@@ -45,7 +45,7 @@
   margin-inline: auto;
   padding: .5rem;
   border-radius: .5rem;
-  background-color: hsl(198 99% 7%);
+  background-color: var(--clr-bg-dark);
 }
 
 .ec-month-year {
@@ -57,18 +57,19 @@
   justify-content: center;
 }
 
-.ec-icon {
+.ec-carousel-icon {
   margin: .25rem;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  border-radius: .25rem;
-  background-color: hsl(198 99% 9%);
+  border: 3px solid var(--clr-text);
+  border-radius: 50%;
+  background-color: var(--clr-bg-xdark);
 }
 
-.ec-icon:hover {
-  background-color: hsl(198 99% 18%);
+.ec-carousel-icon:hover {
+  background-color: var(--clr-bg-mdark);
 }
 
 .ec-calendar-grid {
@@ -81,16 +82,11 @@
   list-style: none;
 }
 
-.ec-date-wrapper {
-  container-type: inline-size;
-}
-
 .ec-date-card {
   display: flex;
   flex-direction: column;
-  height: 100cqi;
-  border: 3px solid hsl(198, 99%, 27%);
-  background-color: hsl(198, 99%, 18%);
+  aspect-ratio: 1 / 1;
+  border: 3px solid var(--clr-bg-med);
   border-radius: .5rem;
   cursor: pointer;
 }
@@ -101,7 +97,7 @@
 }
 
 .ec-date-card:hover {
-  background-color: hsl(198 99% 36%) !important;
+  background-color: var(--clr-bg-med) !important;
 }
 
 .ec-date-number {
