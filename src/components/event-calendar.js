@@ -35,7 +35,7 @@ const EventCalendar = () => {
 
   console.log(rawArray)
   
-  const eventDateArray = events.map(({node}) => new Date(node.start_date_time).split("T", 1).toString())
+  const eventDateArray = events.map(({node}) => new Date(node.start_date_time.split("T", 1).toString()))
 
   console.log(eventDateArray)
   
@@ -55,7 +55,7 @@ const EventCalendar = () => {
   const firstDayOfMonth = new Date(displayYear, displayMonth, 1).getDay()
 
   const todaysEvents = events.filter(({node}) => {
-    if (new Date(node.start_date_time).split("T", 1).toString() === activeDate.split("T", 1).toString()) {
+    if (new Date(node.start_date_time.split("T", 1).toString()) === activeDate.split("T", 1).toString()) {
       return {node}
     }
   })
