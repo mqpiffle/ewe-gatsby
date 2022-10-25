@@ -31,13 +31,13 @@ const EventCalendar = () => {
   `)
     
   const events = data.allStrapiEvent.edges
-  const rawArray = events.map(({node}) => new Date(node.start_date_time))
+  const utcArray = events.map(({node}) => node.start_date_time)
 
-  console.log(rawArray)
+  console.log(UTC=`${utcArray}`)
   
-  const eventDateArray = events.map(({node}) => new Date(node.start_date_time.split("T", 1).toString()))
+  const localDateArray = utcArray.map(({node}) => node.start_date_time.split(0, -1))
 
-  console.log(eventDateArray)
+  console.log(localDateArray)
   
   const date = new Date()
   const thisYear = date.getUTCFullYear()
@@ -54,8 +54,8 @@ const EventCalendar = () => {
   const daysInMonth = moment(`${displayYear}-${displayMonth+1}`, 'YYYY-MM').daysInMonth()
   const firstDayOfMonth = new Date(displayYear, displayMonth, 1).getDay()
 
-  const todaysEvents = events.filter(({node}) => {
-    if (new Date(node.start_date_time.split("T", 1).toString()) === activeDate.split("T", 1).toString()) {
+  const todaysEvents = localDateArray.filter(({node}) => {
+    if (node.split("T", 1).toString() === activeDate.split("T", 1).toString()) {
       return {node}
     }
   })
@@ -181,7 +181,7 @@ const EventCalendar = () => {
                   {date}
                 </p>
                 <div className="ec-event-pips-grid">
-                {eventDateArray.map((event, i) => {
+                {localDateArray.map((event, i) => {
                   if (event === calendarDate.split("T", 1).toString()) {
                     return (
                       <div key={i} className="ec-event-pips-icon-container flex">
