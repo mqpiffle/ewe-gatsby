@@ -54,7 +54,7 @@ const EventCalendar = () => {
   const daysInMonth = moment(`${displayYear}-${displayMonth+1}`, 'YYYY-MM').daysInMonth()
   const firstDayOfMonth = new Date(displayYear, displayMonth, 1).getDay()
 
-  const todaysEvents = localDateArray.filter(x => {
+  const todaysEvents = eventDateArray.filter(x => {
     if (x.split("T", 1).toString() === activeDate.split("T", 1).toString()) {
       return {x}
     }
@@ -181,7 +181,7 @@ const EventCalendar = () => {
                   {date}
                 </p>
                 <div className="ec-event-pips-grid">
-                {localDateArray.map((event, i) => {
+                {eventDateArray.map((event, i) => {
                   if (event === calendarDate.split("T", 1).toString()) {
                     return (
                       <div key={i} className="ec-event-pips-icon-container flex">
