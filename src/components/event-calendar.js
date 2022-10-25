@@ -35,7 +35,8 @@ const EventCalendar = () => {
 
   console.log(utcArray)
   
-  const localDateArray = events.map(({node}) => node.start_date_time.split("Z", 1).toISOString())
+  const eventDateArray = events.map(({node}) => node.start_date_time.split("Z", 1).toString())
+  const localDateArray = eventDateArray.map(x => new Date(x).toISOString())
 
   console.log(localDateArray)
   
