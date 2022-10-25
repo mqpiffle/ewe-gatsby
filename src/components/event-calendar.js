@@ -54,9 +54,9 @@ const EventCalendar = () => {
   const daysInMonth = moment(`${displayYear}-${displayMonth+1}`, 'YYYY-MM').daysInMonth()
   const firstDayOfMonth = new Date(displayYear, displayMonth, 1).getDay()
 
-  const todaysEvents = localDateArray.filter(({node}) => {
-    if (node.split("T", 1).toString() === activeDate.split("T", 1).toString()) {
-      return {node}
+  const todaysEvents = localDateArray.filter(x => {
+    if (x.split("T", 1).toString() === activeDate.split("T", 1).toString()) {
+      return {x}
     }
   })
   
