@@ -31,6 +31,10 @@ const EventCalendar = () => {
   `)
     
   const events = data.allStrapiEvent.edges
+  const rawArray = events.map(({node}) => node.start_date_time)
+
+  console.log(rawArray)
+  
   const eventDateArray = events.map(({node}) => node.start_date_time.split("T", 1).toString())
 
   console.log(eventDateArray)
