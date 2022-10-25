@@ -182,7 +182,7 @@ const EventCalendar = () => {
                 </p>
                 <div className="ec-event-pips-grid">
                 {eventDateArray.map((event, i) => {
-                  if (event === calendarDate.split("T", 1).toString()) {
+                  if (event.split("T", 1).toString() === calendarDate.split("T", 1).toString()) {
                     return (
                       <div key={i} className="ec-event-pips-icon-container flex">
                         <Icon
