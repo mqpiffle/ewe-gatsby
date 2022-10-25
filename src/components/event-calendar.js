@@ -31,13 +31,8 @@ const EventCalendar = () => {
   `)
     
   const events = data.allStrapiEvent.edges
-  const utcArray = events.map(({node}) => node.start_date_time)
-
-  console.log(utcArray)
   
   const eventDateArray = events.map(({node}) => moment(node.start_date_time).format())
-
-  console.log(eventDateArray)
   
   const date = new Date()
   const thisYear = date.getUTCFullYear()
@@ -54,9 +49,10 @@ const EventCalendar = () => {
   const daysInMonth = moment(`${displayYear}-${displayMonth+1}`, 'YYYY-MM').daysInMonth()
   const firstDayOfMonth = new Date(displayYear, displayMonth, 1).getDay()
 
-  const todaysEvents = eventDateArray.filter(x => {
-    if (x.split("T", 1).toString() === activeDate.split("T", 1).toString()) {
-      return {x}
+  const todaysEvents = events.filter(({node}) => {
+    const localNode = moment(node.start_date_time).format()
+    if (localNode.split("T", 1).toString() === activeDate.split("T", 1).toString()) {
+      return {node}
     }
   })
   
