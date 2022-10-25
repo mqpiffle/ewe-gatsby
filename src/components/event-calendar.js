@@ -35,10 +35,9 @@ const EventCalendar = () => {
 
   console.log(utcArray)
   
-  const eventDateArray = events.map(({node}) => node.start_date_time.split("Z", 1).toString())
-  const localDateArray = eventDateArray.map(x => new Date(x).toString())
+  const eventDateArray = events.map(({node}) => moment(node.start_date_time).format())
 
-  console.log(localDateArray)
+  console.log(eventDateArray)
   
   const date = new Date()
   const thisYear = date.getUTCFullYear()
