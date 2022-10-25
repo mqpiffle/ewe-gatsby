@@ -96,10 +96,10 @@ const EventCalendar = () => {
   
   return (
     <div className="ec-wrapper">
-      <div className="ec-title"> 
+      <div className="ec-title flex"> 
         <h2>Event Calendar Project</h2>
         <Icon
-          className="ec-title-icon"
+          className="ec-title-icon flex"
           path={mdiCalendarMonth}
           size={1.25}
         />
@@ -109,19 +109,19 @@ const EventCalendar = () => {
         <p>It is built with a stack of <a href="https://www.gatsbyjs.com/" target="_blank" rel="noreferrer">Gatsbyjs</a>, <a href="https://strapi.io/" target="_blank" rel="noreferrer">strapi CMS</a>, and is deployed to <a href="https://render.com/" target="_blank" rel="noreferrer">Render</a> (automatically updated when changes are pushed to GitHub), and is styled mostly with 'vanilla' CSS while using conditional styles in the react code base.  The only external libraries used in this project are <a href="https://momentjs.com/" target="_blank" rel="noreferrer">moment.js</a> and <a href="https://www.npmjs.com/package/react-moment" target="_blank" rel="noreferrer">react-moment</a> for their convenience when dealing with dates and times, and <a href="https://materialdesignicons.com/" target="_blank" rel="noreferrer">Material Design Icons</a> for easy-to-use iconography.</p>
       </div>
       <div className="ec-calendar-wrapper">
-        <div className="ec-month-carousel">
-          <div className="ec-carousel-icon">
+        <div className="ec-month-carousel flex">
+          <div className="ec-carousel-icon flex">
             <Icon
               path={mdiChevronDoubleLeft}
               size={1.25}
               onClick={() => handleCarouselClick(false)}
             />
           </div>
-          <div className="ec-month-year">
+          <div className="ec-month-year flex flexd-column">
             <h2 >{monthStr}</h2>
             <h3>{displayYear}</h3>
           </div>
-          <div className="ec-carousel-icon">
+          <div className="ec-carousel-icon flex">
             <Icon
               path={mdiChevronDoubleRight}
               size={1.25}
@@ -171,7 +171,7 @@ const EventCalendar = () => {
               onClick={() => handleDateClick(calendarDate)}
             >
               <div 
-                className="ec-date-card" 
+                className="ec-date-card flexd-column" 
                 style={{borderColor: colorForeground(), backgroundColor: colorBackground()}}
               >
                 <p 
@@ -184,7 +184,7 @@ const EventCalendar = () => {
                 {eventDateArray.map((event, i) => {
                   if (event === calendarDate.split("T", 1).toString()) {
                     return (
-                      <div key={i} className="ec-event-pips-icon-container">
+                      <div key={i} className="ec-event-pips-icon-container flex">
                         <Icon
                           className="ec-event-pips-icon"
                           path={mdiCircle}

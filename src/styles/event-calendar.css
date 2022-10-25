@@ -4,16 +4,10 @@
 }
 
 .ec-title {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding-block: 1.5%;
 }
 
 .ec-title-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-inline: 1rem;
   color: var(--clr-highlight);
 }
@@ -39,9 +33,6 @@
 
 .ec-month-carousel {
   width: fit-content;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   margin-inline: auto;
   padding: .5rem;
   border-radius: .5rem;
@@ -49,19 +40,12 @@
 }
 
 .ec-month-year {
-  width: 15rem;
+  width: min(15rem, 100%);
   padding-inline: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .ec-carousel-icon {
   margin: .25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   border: 3px solid var(--clr-text);
   border-radius: 50%;
@@ -84,7 +68,6 @@
 
 .ec-date-card {
   display: flex;
-  flex-direction: column;
   aspect-ratio: 1 / 1;
   border: 3px solid var(--clr-bg-med);
   border-radius: .5rem;
@@ -113,9 +96,6 @@
 }
 
 .ec-event-pips-icon-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 0;
 }
 

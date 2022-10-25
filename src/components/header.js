@@ -4,7 +4,7 @@ import "../styles/header.css"
 
 const Header = () => {
   return (
-    <header>
+    <header className='flex'>
       <h1>ericelsner.com</h1>
     </header>
   )

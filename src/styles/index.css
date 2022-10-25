@@ -18,7 +18,7 @@
     --clr-text: hsl(60 66% 89%);
     --clr-highlight: hsl(29 74% 56%);
     --clr-visited: hsl(276 56% 38%);
-    --clr-shadow-light: hsl(60 66% 89% / .5);
+    --clr-shadow-light: hsl(60 66% 89% / .33);
 }
 
 html {
@@ -33,6 +33,16 @@ body {
     color: var(--clr-text);
     background-color: var(--clr-bg-dark);
     overflow-x: hidden;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexd-column {
+    flex-direction: column;
 }
 
 .main {
