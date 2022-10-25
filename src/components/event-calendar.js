@@ -33,7 +33,7 @@ const EventCalendar = () => {
   const events = data.allStrapiEvent.edges
   const utcArray = events.map(({node}) => node.start_date_time)
 
-  console.log(UTC=`${utcArray}`)
+  console.log(utcArray)
   
   const localDateArray = events.map(({node}) => node.start_date_time.split(0, -1))
 
