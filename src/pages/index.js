@@ -1,22 +1,32 @@
-import React from "react"
-import Header from "../components/header"
-import EventCalendar from "../components/event-calendar"
+import React from 'react'
+import Header from '../components/Header'
+import { Link } from 'gatsby'
+import EventCalendar from '../components/event-calendar'
 
-import "../styles/index.css"
-import "../styles/event-calendar.css"
+import '../styles/index.css'
+import '../styles/event-calendar.css'
 
 const IndexPage = () => {
-  return (
-    <div>
-      <Header />
-      <div className="main">
-        <div className="welcome">
-          <h2>Under Construction &#128296;</h2>
-          <h3>Check back soon! &#128064; Updated regularly.</h3>
+    return (
+        <div>
+            <Header />
+            <main className='main'>
+                <div className='info'>
+                    <h2>Welcome to my internet domain.</h2>
+                    <h3>Please choose your destination:</h3>
+                    <ul className='link-list'>
+                        <li className='link-list-item'>
+                            <Link to='/portfolio'>my coding portfolio.</Link>
+                        </li>
+                        <li className='link-list-item'>
+                            <Link to='/music'>
+                                my music showcase (coming soon...)
+                            </Link>
+                        </li>
+                    </ul>
+                </div>
+            </main>
         </div>
-        <EventCalendar />
-      </div>
-    </div>
-  )
+    )
 }
 export default IndexPage
