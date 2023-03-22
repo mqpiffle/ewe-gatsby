@@ -33,7 +33,7 @@ module.exports = {
             resolve: 'gatsby-source-strapi',
             options: {
                 apiURL: process.env.STRPI_API_URL,
-                accessToken: `4a74b415370359334c4d29c0b63dceed923b7dc6fac1fb7d8f73266a1405511f83fb89a3b61d6e90c7d4bfe0ad78e12385e801880d9d692782eaaa31c0f7afcfa1201358cacd71add8fb39df6152c4f941fbeb485ac80478532d3f8722ecb8bbc3097b509d16dcc6e6785a2dc62182db3601322b27015397c1c74c49b8ef305c`,
+                accessToken: process.env.STRPI_TOKEN,
                 collectionTypes: ['event', 'project'],
                 singleTypes: ['portfolio'],
             },
