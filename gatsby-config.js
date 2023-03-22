@@ -33,7 +33,7 @@ module.exports = {
             resolve: 'gatsby-source-strapi',
             options: {
                 apiURL: process.env.STRPI_API_URL,
-                accessToken: process.env.STRPI_TOKEN,
+                accessToken: process.env.STRAPI_TOKEN,
                 collectionTypes: ['event', 'project'],
                 singleTypes: ['portfolio'],
             },
