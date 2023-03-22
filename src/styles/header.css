@@ -1,11 +1,11 @@
-header {
-  width: 100vw;
-  background-color: var(--clr-bg-xdark);
+#brand {
+  font-size: 2.5rem;
+  color: var(--clr-text);
+  text-decoration: none;
+  transition: color 180ms ease;
 }
 
-header>h1 {
-  padding: 3%;
+#brand:hover {
   color: var(--clr-highlight);
-  text-shadow: 1px 2px 5px var(--clr-shadow-light);
-  cursor: pointer;
+  transition: color 180ms ease;
 }

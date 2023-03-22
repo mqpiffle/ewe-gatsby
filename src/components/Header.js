@@ -8,11 +8,11 @@ import '../styles/header.css'
 
 const Header = () => {
     const [modalOpen, setModalOpen] = useState(false)
-    console.log('modalOpen', modalOpen)
+    // console.log('modalOpen', modalOpen)
 
     const handleModal = event => {
         event.preventDefault()
-        console.log('MODAL CLICK')
+        // console.log('MODAL CLICK')
         setModalOpen(prev => !prev)
     }
 
@@ -47,21 +47,21 @@ const Header = () => {
                             <Icon
                                 path={mdiGithub}
                                 size={2.5}
-                                color='var(--clr-text)'
+                                className='icon'
                             />
                         </a>
                         <a href=''>
                             <Icon
                                 path={mdiLinkedin}
                                 size={2.5}
-                                color='var(--clr-text)'
+                                className='icon'
                             />
                         </a>
                         <div className='contact'>
                             <Icon
                                 path={mdiEmail}
                                 size={2.5}
-                                color='var(--clr-text)'
+                                className='icon'
                                 onClick={handleModal}
                             />
                         </div>

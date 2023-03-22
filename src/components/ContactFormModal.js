@@ -5,62 +5,50 @@ import { mdiClose } from '@mdi/js'
 import '../styles/contact-form.css'
 
 const ContactFormModal = ({ dialogRef, closeModal }) => {
-    console.log('closeModal', closeModal)
-    // const dialogRef = useRef(null)
-    // // const lastActiveElement = useRef(null)
-
-    // console.log('open', open)
-    // useEffect(() => {
-    //     const node = dialogRef.current
-    //     if (open) {
-    //         // lastActiveElement.current = document.activeElement
-    //         node.showModal()
-    //     } else {
-    //         node.close()
-    //         // lastActiveElement.current.focus()
-    //     }
-    // }, [open])
-
-    // useEffect(() => {
-    //     const dialogNode = dialogRef.current
-    //     const handleCancel = event => {
-    //         event.preventDefault()
-    //         onRequestClose()
-    //     }
-    //     dialogNode.addEventListener('cancel', handleCancel)
-    //     return () => {
-    //         dialogNode.removeEventListener('cancel', handleCancel)
-    //     }
-    // }, [onRequestClose])
-
     return (
-        <dialog ref={dialogRef}>
+        <dialog
+            ref={dialogRef}
+            onCancel={closeModal}
+        >
             <div className='modal-header'>
                 <Icon
                     path={mdiClose}
                     size={2}
-                    color='var(--clr-highlight2)'
+                    className='icon'
                     onClick={closeModal}
                 />
             </div>
-            <h2>I would be happy to hear from you.</h2>
+            <h2 className='modal-title'>I would be happy to hear from you.</h2>
             <form
                 action=''
                 method='POST'
                 className='contact-form'
             >
-                <input
-                    type='text'
-                    value='name'
-                />
-                <input
-                    type='email'
-                    value='email'
-                />
-                <input
-                    type='text'
-                    value='comment'
-                />
+                <div className='contact-form__section'>
+                    <label htmlFor='name'>Name:</label>
+                    <input
+                        type='text'
+                        name='name'
+                        id='name'
+                    />
+                </div>
+                <div className='contact-form__section'>
+                    <label htmlFor='email'>Email:</label>
+                    <input
+                        type='email'
+                        name='email'
+                        id='email'
+                    />
+                </div>
+                <div className='contact-form__section'>
+                    <label htmlFor='comment'>Comment:</label>
+                    <textarea
+                        type='text'
+                        name='comment'
+                        id='comment'
+                        rows='5'
+                    />
+                </div>
                 <button
                     className='btn'
                     type='submit'
