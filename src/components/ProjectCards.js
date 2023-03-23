@@ -14,7 +14,7 @@ const ProjectCards = props => {
                     image {
                         localFile {
                             childImageSharp {
-                                gatsbyImageData(layout: CONSTRAINED, width: 400)
+                                gatsbyImageData(layout: CONSTRAINED)
                             }
                         }
                     }
