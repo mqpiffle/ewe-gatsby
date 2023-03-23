@@ -117,9 +117,10 @@ dialog::backdrop {
 }
 
 .link-list-item {
+    font-weight: 600;
     display: flex;
     align-items: center;
-    gap: 1.5 rem;
+    gap: 1.5rem;
     font-size: 1.25rem;
 }
 
