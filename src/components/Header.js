@@ -53,14 +53,22 @@ const Header = () => {
                         </Link>
                     </h1>
                     <div className='external-links'>
-                        <a href={headerData.github_url}>
+                        <a
+                            href={headerData.github_url}
+                            target='_blank'
+                            rel='noreferrer'
+                        >
                             <Icon
                                 path={mdiGithub}
                                 size={2.5}
                                 className='icon'
                             />
                         </a>
-                        <a href={headerData.linkedin_url}>
+                        <a
+                            href={headerData.linkedin_url}
+                            target='_blank'
+                            rel='noreferrer'
+                        >
                             <Icon
                                 path={mdiLinkedin}
                                 size={2.5}
