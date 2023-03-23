@@ -1,12 +1,21 @@
 import React, { useState, useEffect, useRef } from 'react'
 import ContactFormModal from './ContactFormModal'
-import { Link } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import Icon from '@mdi/react'
 import { mdiGithub, mdiLinkedin, mdiEmail, mdiClose } from '@mdi/js'
 
 import '../styles/header.css'
 
 const Header = () => {
+    const data = useStaticQuery(graphql`
+        query {
+            strapiHeader {
+                brand
+                github_url
+                linkedin_url
+            }
+        }
+    `)
     const [modalOpen, setModalOpen] = useState(false)
     // console.log('modalOpen', modalOpen)
 
@@ -16,6 +25,7 @@ const Header = () => {
         setModalOpen(prev => !prev)
     }
 
+    const headerData = data.strapiHeader
     const dialogRef = useRef(null)
     // const lastActiveElement = useRef(null)
 
@@ -39,18 +49,18 @@ const Header = () => {
                             to='/'
                             id='brand'
                         >
-                            ericelsner.com
+                            {headerData.brand}
                         </Link>
                     </h1>
                     <div className='external-links'>
-                        <a href=''>
+                        <a href={headerData.github_url}>
                             <Icon
                                 path={mdiGithub}
                                 size={2.5}
                                 className='icon'
                             />
                         </a>
-                        <a href=''>
+                        <a href={headerData.linkedin_url}>
                             <Icon
                                 path={mdiLinkedin}
                                 size={2.5}

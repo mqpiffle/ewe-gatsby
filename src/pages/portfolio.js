@@ -1,4 +1,5 @@
 import React from 'react'
+import { useStaticQuery, graphql } from 'gatsby'
 import Header from '../components/Header'
 import ProjectCards from '../components/ProjectCards'
 
@@ -8,13 +9,21 @@ import ProjectCards from '../components/ProjectCards'
 // contact form
 
 const PortfolioPage = props => {
+    const data = useStaticQuery(graphql`
+        query {
+            strapiPortfolio {
+                main_heading
+                sub_heading
+            }
+        }
+    `)
     return (
         <div>
             <Header />
             <main className='main'>
                 <div className='info'>
-                    <h2>Welcome to my coding portfolio.</h2>
-                    <h3>Here are some examples of my work.</h3>
+                    <h2>{data.strapiPortfolio.main_heading}</h2>
+                    <h3>{data.strapiPortfolio.sub_heading}</h3>
                 </div>
                 <ProjectCards />
             </main>
