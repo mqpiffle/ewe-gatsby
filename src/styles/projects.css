@@ -74,6 +74,7 @@
 }
 
 .project-card__techs {
+    justify-self: flex-end;
     display: flex;
     align-items: center;
     flex-wrap: wrap;
