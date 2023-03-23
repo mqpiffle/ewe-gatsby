@@ -55,6 +55,10 @@ nav {
     justify-content: space-evenly;
 }
 
+ul {
+    list-style: none;
+}
+
 dialog {
     display: flex;
     flex-direction: column;
@@ -110,10 +114,11 @@ dialog::backdrop {
     flex-direction: column;
     gap: .5rem;
     padding: 2rem 0;
-    list-style: square inside url('../images/rocket_launch_white_18dp.svg');
 }
 
 .link-list-item {
+    display: flex;
+    align-items: center;
     font-size: 1.25rem;
 }
 
