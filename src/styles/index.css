@@ -37,6 +37,7 @@ html {
 
 body {
     min-height: 100vh;
+    min-height: 100dvh;
     color: var(--clr-text);
     background-color: var(--clr-bg-dark);
     overflow-x: hidden;
@@ -51,8 +52,10 @@ nav {
     width: 100%;
     padding: 3rem;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
+    gap: 1rem;
 }
 
 ul {
@@ -75,6 +78,9 @@ dialog::backdrop {
     background-color: var(--clr-backdrop);
 }
 
+a {
+    text-decoration: none;
+}
 
 .flex {
     display: flex;
@@ -117,11 +123,13 @@ dialog::backdrop {
 }
 
 .link-list-item {
+    font-size: 1.5rem;
     font-weight: 600;
     display: flex;
     align-items: center;
     gap: 1.5rem;
     font-size: 1.25rem;
+    transition: color 180ms ease;
 }
 
 
@@ -130,7 +138,11 @@ a:link {
 }
 
 a:visited {
-    color: var(--clr-visited);
+    color: var(--clr-highlight);
+}
+
+a:hover {
+    color: var(--clr-highlight2);
 }
 
 .btn {
@@ -161,4 +173,11 @@ a:visited {
 .icon:hover {
     color: var(--clr-highlight);
     transition: color 180ms ease;
+}
+
+
+@media screen and (min-width: 720px) {
+    nav {
+        flex-direction: row;
+    }
 }
