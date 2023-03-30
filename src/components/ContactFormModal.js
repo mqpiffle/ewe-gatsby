@@ -41,11 +41,11 @@ const ContactFormModal = ({ dialogRef, closeModal }) => {
                     />
                 </div>
                 <div className='contact-form__section'>
-                    <label htmlFor='comment'>Comment:</label>
+                    <label htmlFor='message'>Message:</label>
                     <textarea
                         type='text'
-                        name='comment'
-                        id='comment'
+                        name='message'
+                        id='message'
                         rows='5'
                     />
                 </div>
