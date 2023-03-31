@@ -95,7 +95,7 @@ const ProjectCards = props => {
             </div>
         </div>
     ))
-    console.log(cards)
+    // console.log(cards)
     return <div className='project-card__container'>{cards}</div>
 }
 

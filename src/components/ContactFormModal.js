@@ -20,7 +20,6 @@ const ContactFormModal = ({ dialogRef, closeModal }) => {
     //     e.persist()
     //     setTextarea(e.target.value)
     // }
-    console.log('url:', url)
     const handleSubmit = e => {
         e.preventDefault()
         axios
@@ -28,7 +27,7 @@ const ContactFormModal = ({ dialogRef, closeModal }) => {
                 formData: inputs,
             })
             .then(res => {
-                console.log(res)
+                // console.log(res)
                 setSubmitted(true)
             })
             .catch(err => {

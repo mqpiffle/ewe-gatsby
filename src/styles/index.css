@@ -52,7 +52,7 @@ nav {
     width: 100%;
     padding: 3rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: space-evenly;
     gap: 1rem;
@@ -78,6 +78,8 @@ dialog {
 dialog::backdrop {
     background-color: var(--clr-backdrop);
 }
+
+
 
 a {
     text-decoration: none;
@@ -177,8 +179,12 @@ a:hover {
 }
 
 
-@media screen and (min-width: 720px) {
+@media screen and (max-width: 720px) {
     nav {
-        flex-direction: row;
+        flex-direction: column;
+    }
+
+    dialog {
+        padding: 1rem;
     }
 }
