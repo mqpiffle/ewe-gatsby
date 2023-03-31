@@ -25,6 +25,7 @@ const ProjectCards = props => {
                     github_link
                     deployed_link
                     tech {
+                        id
                         name
                     }
                 }
@@ -94,7 +95,7 @@ const ProjectCards = props => {
             </div>
         </div>
     ))
-
+    console.log(cards)
     return <div className='project-card__container'>{cards}</div>
 }
 
