@@ -31,6 +31,10 @@ textarea:focus {
     gap: .5rem;
 }
 
+.contact-form__btn {
+    align-self: center;
+}
+
 .modal-title {
     color: var(--clr-highlight2);
 }

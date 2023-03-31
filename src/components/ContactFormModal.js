@@ -112,7 +112,7 @@ const ContactFormModal = ({ dialogRef, closeModal }) => {
                             </label>
                         </div>
                         <input
-                            className='btn'
+                            className='btn contact-form__btn'
                             type='submit'
                             value='Submit'
                         />
