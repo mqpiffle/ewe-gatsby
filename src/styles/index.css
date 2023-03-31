@@ -63,7 +63,7 @@ ul {
 }
 
 dialog {
-    max-width: 83ch;
+    width: min(83ch, 97%);
     display: flex;
     flex-direction: column;
     gap: 2rem;

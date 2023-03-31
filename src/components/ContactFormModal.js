@@ -9,7 +9,7 @@ const ContactFormModal = ({ dialogRef, closeModal }) => {
     const [inputs, setInputs] = useState({})
     const [submitted, setSubmitted] = useState(false)
     // const [textarea, setTextarea] = useState('Your message here.')
-
+    const url = process.env.GATSBY_API_URL
     const handleChange = e => {
         const name = e.target.name
         const value = e.target.value
@@ -20,11 +20,11 @@ const ContactFormModal = ({ dialogRef, closeModal }) => {
     //     e.persist()
     //     setTextarea(e.target.value)
     // }
-
+    console.log('url:', url)
     const handleSubmit = e => {
         e.preventDefault()
         axios
-            .post('http://localhost:1337/api/ezforms/submit', {
+            .post(`${url}/api/ezforms/submit`, {
                 formData: inputs,
             })
             .then(res => {
