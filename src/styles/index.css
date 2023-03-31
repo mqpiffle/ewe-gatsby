@@ -65,9 +65,9 @@ ul {
 dialog {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 2rem;
     margin: auto;
-    padding: 2rem 5rem;
+    padding: 3rem 5rem;
     color: var(--clr-text);
     background-color: var(--clr-bg-dark);
     border: 5px solid var(--clr-highlight);
@@ -150,7 +150,7 @@ a:hover {
     font-size: 1.5rem;
     font-weight: 600;
     padding: .25rem .75rem;
-    background-color: var(--clr-text);
+    background-color: var(--clr-highlight2);
     border: none;
     border-radius: .25rem;
     cursor: pointer;

@@ -1,7 +1,7 @@
 input,
 textarea {
-    font-size: 1.5rem;
-    padding: .25rem .5rem;
+    font-size: 1.25rem;
+    padding: .375rem .5rem;
     border-radius: .25rem;
 }
 
@@ -15,12 +15,20 @@ textarea:focus {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .contact-form__section {
     display: flex;
     flex-direction: column;
+    gap: .5rem;
+}
+
+.contact-form__checkbox {
+    display: inline-flex;
+    align-items: flex-start;
+    /* flex-wrap: wrap; */
+    gap: .5rem;
 }
 
 .modal-title {
