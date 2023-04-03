@@ -3,7 +3,7 @@ import axios from 'axios'
 import Icon from '@mdi/react'
 import { mdiClose } from '@mdi/js'
 
-import '../styles/contact-form.css'
+import '../../styles/contact-form.css'
 
 const ContactFormModal = ({ dialogRef, closeModal }) => {
     const [inputs, setInputs] = useState({})

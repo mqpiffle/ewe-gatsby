@@ -4,7 +4,7 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Icon from '@mdi/react'
 import { mdiGithub, mdiOpenInNew } from '@mdi/js'
 
-import '../styles/projects.css'
+import '../../styles/projects.css'
 
 const ProjectCards = props => {
     const data = useStaticQuery(graphql`
