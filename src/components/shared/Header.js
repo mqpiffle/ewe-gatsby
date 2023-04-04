@@ -4,6 +4,9 @@ import { Link, useStaticQuery, graphql } from 'gatsby'
 import Icon from '@mdi/react'
 import { mdiAccountCircleOutline } from '@mdi/js'
 
+import LoginButton from './LoginButton'
+import LogoutButton from './LogoutButton'
+
 import '../../styles/header.css'
 
 const Header = () => {
@@ -30,17 +33,9 @@ const Header = () => {
                             {headerData.brand}
                         </Link>
                     </h1>
-                    {!user ? (
-                        <button className='btn'>Login</button>
-                    ) : (
-                        <>
-                            <span>Welcome!</span>
-                            <Icon
-                                path={mdiAccountCircleOutline}
-                                size={1.5}
-                            />
-                        </>
-                    )}
+                    <LoginButton />
+                    <LogoutButton />
+                    <Link to='/account'>Account</Link>
                 </nav>
             </header>
         </>
