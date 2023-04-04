@@ -7,11 +7,11 @@ import '../../styles/index.css'
 
 const Layout = ({ children }) => {
     return (
-        <>
+        <body>
             <Header />
             <main className='main'>{children}</main>
             <Footer />
-        </>
+        </body>
     )
 }
 

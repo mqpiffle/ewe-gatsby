@@ -3,7 +3,7 @@ import axios from 'axios'
 import Icon from '@mdi/react'
 import { mdiClose } from '@mdi/js'
 
-import '../../styles/contact-form.css'
+import '../../styles/form.css'
 
 const ContactFormModal = ({ dialogRef, closeModal }) => {
     const [inputs, setInputs] = useState({})
@@ -58,9 +58,9 @@ const ContactFormModal = ({ dialogRef, closeModal }) => {
                         action=''
                         method='POST'
                         onSubmit={handleSubmit}
-                        className='contact-form'
+                        className='form'
                     >
-                        <div className='contact-form__section'>
+                        <div className='form__section'>
                             <label htmlFor='name'>Name:</label>
                             <input
                                 type='text'
@@ -83,7 +83,7 @@ const ContactFormModal = ({ dialogRef, closeModal }) => {
                                 required
                             />
                         </div>
-                        <div className='contact-form__section'>
+                        <div className='form__section'>
                             <label htmlFor='message'>Message:</label>
                             <textarea
                                 type='text'
@@ -97,7 +97,7 @@ const ContactFormModal = ({ dialogRef, closeModal }) => {
                                 required
                             />
                         </div>
-                        <div className='contact-form__checkbox'>
+                        <div className='form__checkbox'>
                             <input
                                 type='checkbox'
                                 id='agree'
@@ -111,7 +111,7 @@ const ContactFormModal = ({ dialogRef, closeModal }) => {
                             </label>
                         </div>
                         <input
-                            className='btn contact-form__btn'
+                            className='btn form__btn'
                             type='submit'
                             value='Submit'
                         />

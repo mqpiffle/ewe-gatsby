@@ -12,26 +12,26 @@ textarea:focus {
 
 
 
-.contact-form {
+.form {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
 }
 
-.contact-form__section {
+.form__section {
     display: flex;
     flex-direction: column;
     gap: .5rem;
 }
 
-.contact-form__checkbox {
+.form__checkbox {
     display: inline-flex;
     align-items: flex-start;
     /* flex-wrap: wrap; */
     gap: .5rem;
 }
 
-.contact-form__btn {
+.form__btn {
     align-self: center;
 }
 

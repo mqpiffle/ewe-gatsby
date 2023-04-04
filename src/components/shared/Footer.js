@@ -9,7 +9,7 @@ const Footer = props => {
 
     return (
         <footer>
-            <div className='copyright'>
+            <div className='flex'>
                 <Icon
                     path={mdiCopyright}
                     size={1}
