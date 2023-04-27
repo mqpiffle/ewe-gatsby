@@ -55,7 +55,7 @@ const PortfolioPage = props => {
             <div className='info'>
                 <h2>{portfolioData.main_heading}</h2>
                 <h3>{portfolioData.sub_heading}</h3>
-                <div className='external-links'>
+                <div className='external-links flex'>
                     <a
                         href={portfolioData.github_url}
                         target='_blank'
