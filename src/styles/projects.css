@@ -35,7 +35,7 @@
 }
 
 .project-card__name {
-	font-size: clamp(1.5rem, 3.25vw, 1.875rem);
+	font-size: clamp(1.5rem, 2.5vw, 1.875rem);
 	color: var(--clr-primary-highlight);
 	text-shadow: 1px 1px 2px var(--clr-card-text-shadow);
 }
@@ -59,13 +59,13 @@
 	padding: 0.5rem 0;
 	text-decoration: none;
 	border-radius: 0.5rem;
-	background-color: var(--clr-primary-highlight);
+	background-color: var(--clr-primary-surface);
 	box-shadow: 0 0 0 var(--clr-card-text-shadow);
 	transition: all 180ms ease;
 }
 
 .project-card__link:hover {
-	background-color: var(--clr-primary-surface);
+	background-color: var(--clr-primary-highlight);
 	box-shadow: 2px 2px 5px 1px var(--clr-card-text-shadow);
 	transition: background-color 180ms ease;
 }
