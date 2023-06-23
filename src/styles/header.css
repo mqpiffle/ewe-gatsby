@@ -1,11 +1,11 @@
 #brand {
-  font-size: 2.5rem;
-  color: var(--clr-text);
-  text-decoration: none;
-  transition: color 180ms ease;
+	font-size: clamp(2rem, 3vw, 2.5rem);
+	color: var(--clr-text);
+	text-decoration: none;
+	transition: color 180ms ease;
 }
 
 #brand:hover {
-  color: var(--clr-highlight);
-  transition: color 180ms ease;
+	color: var(--clr-highlight);
+	transition: color 180ms ease;
 }
