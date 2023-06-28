@@ -57,6 +57,7 @@
 	justify-content: center;
 	gap: 1rem;
 	padding: 0.5rem 0;
+	font-weight: 600;
 	text-decoration: none;
 	border-radius: 0.5rem;
 	background-color: var(--clr-primary-section);
