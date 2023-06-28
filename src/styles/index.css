@@ -33,10 +33,10 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--clr-primary-surface: hsl(198 45% 3%);
-		--clr-primary-section: hsl(198 60% 7%);
+		--clr-primary-surface: hsl(198 27% 9%);
+		--clr-primary-section: hsl(189 63% 18%);
 		/* --clr-bg-dark: hsl(198 75% 9%); */
-		--clr-primary-highlight: hsl(198 90% 18%);
+		--clr-primary-highlight: hsl(180 90% 27%);
 		/* --clr-bg-med: hsl(198 99% 27%);
 		--clr-bg-mlight: hsl(198 99% 36%);
 		--clr-bg-light: hsl(198 90% 45%);
