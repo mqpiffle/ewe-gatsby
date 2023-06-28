@@ -17,17 +17,17 @@
 	--clr-bg-mdark: hsl(60 90% 18%);
 	--clr-bg-med: hsl(60 99% 37%);
 	--clr-bg-mlight: hsl(60 99% 36%); */
-	--clr-primary-highlight: hsl(198 45% 45%);
+	--clr-primary-highlight: hsl(180 90% 27%);
 	/* --clr-bg-vlight: hsl(60 75% 54%); */
-	--clr-primary-section: hsl(198 18% 72%);
-	--clr-primary-surface: hsl(198 9% 90%);
+	--clr-primary-section: hsl(189 45% 45%);
+	--clr-primary-surface: hsl(198 27% 90%);
 	--clr-text: hsl(198 45% 3%);
-	--clr-card: hsl(0 0% 9%);
+	--clr-card: hsl(198 3% 99%);
 	--clr-card-shadow: hsl(0 0% 9% / 0.67);
-	--clr-card-text: hsl(0 0% 97%);
+	--clr-card-text: hsl(0 0% 3%);
 	--clr-card-text-shadow: hsl(0 0% 97% / 0.67);
-	--clr-highlight: hsl(29 74% 36%);
-	--clr-secondary: hsl(45 74% 56%);
+	--clr-highlight: hsl(29 99% 63%);
+	--clr-secondary: hsl(45 74% 63%);
 	--clr-visited: hsl(276 72% 27%);
 	--clr-shadow-light: hsl(60 66% 89% / 0.33);
 	--clr-shadow-dark: hsl(0 0% 0% / 0.67);
@@ -35,7 +35,7 @@
 
 @media (prefers-color-scheme: dark) {
 	:root {
-		--clr-primary-surface: hsl(198 27% 9%);
+		--clr-primary-surface: hsl(198 27% 18%);
 		--clr-primary-section: hsl(189 63% 18%);
 		/* --clr-bg-dark: hsl(198 75% 9%); */
 		--clr-primary-highlight: hsl(180 90% 27%);
@@ -46,9 +46,9 @@
 		--clr-bg-xlight: hsl(198 60% 72%);
 		--clr-bg-xxlight: hsl(198 45% 90%); */
 		--clr-text: hsl(60 45% 90%);
-		--clr-card: hsl(0 0% 97%);
-		--clr-card-shadow: hsl(0 0% 97% / 0.67);
-		--clr-card-text: hsl(0 0% 3%);
+		--clr-card: hsl(198 18% 9%);
+		--clr-card-shadow: hsl(198 18% 9% / 0.67);
+		--clr-card-text: hsl(60 45% 90%);
 		--clr-card-text-shadow: hsl(0 0% 3% / 0.67);
 		--clr-highlight: hsl(29 74% 54%);
 		--clr-secondary: hsl(45 45% 54%);
