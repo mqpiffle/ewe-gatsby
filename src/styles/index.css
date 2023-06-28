@@ -1,4 +1,6 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap"); */
+
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700;800&family=Titillium+Web:wght@200;300;400;600;700&display=swap');
 
 *,
 *::before,
@@ -25,7 +27,7 @@
 	--clr-card-text: hsl(0 0% 97%);
 	--clr-card-text-shadow: hsl(0 0% 97% / 0.67);
 	--clr-highlight: hsl(29 74% 36%);
-	--clr-highlight2: hsl(45 74% 56%);
+	--clr-secondary: hsl(45 74% 56%);
 	--clr-visited: hsl(276 72% 27%);
 	--clr-shadow-light: hsl(60 66% 89% / 0.33);
 	--clr-shadow-dark: hsl(0 0% 0% / 0.67);
@@ -49,7 +51,7 @@
 		--clr-card-text: hsl(0 0% 3%);
 		--clr-card-text-shadow: hsl(0 0% 3% / 0.67);
 		--clr-highlight: hsl(29 74% 54%);
-		--clr-highlight2: hsl(45 74% 54%);
+		--clr-secondary: hsl(45 45% 54%);
 		--clr-visited: hsl(276 99% 72%);
 		--clr-shadow-light: hsl(60 66% 89% / 0.33);
 		--clr-shadow-dark: hsl(0 0% 0% / 0.67);
@@ -69,7 +71,7 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
-	font-family: "Roboto Mono", serif;
+	font-family: "Titillium Web", serif;
 	font-size: 16px;
 	color: var(--clr-text);
 	background-color: var(--clr-primary-surface);
