@@ -170,7 +170,7 @@ footer {
 .info-title {
 	font-family: 'Comfortaa', sans-serif;
 	font-weight: 400;
-	font-size: clamp(2.5rem, 3vw, 3rem);
+	font-size: clamp(2.25rem, 3vw, 3rem);
 }
 
 .info-subtitle {
