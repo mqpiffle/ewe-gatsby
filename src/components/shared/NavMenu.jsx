@@ -1,29 +1,17 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import { Link } from "gatsby"
 
-const NavMenu = () => {
-	const data = useStaticQuery(graphql`
-		query {
-			strapiHeader {
-				nav {
-					display
-					linkTo
-					visible
-					id
-				}
-			}
-		}
-	`)
-
-	const navLinks = data.strapiHeader.nav.map(
+const NavMenu = ({ navItem }) => {
+	const navLinks = navItem.map(
 		(navLink) =>
 			navLink.visible && (
-				<li key={navLink.id}>
-					<Link to={navLink.linkTo}>navLink.display</Link>
+				<li key={navLink.id} className='nav-link'>
+					<Link to={navLink.linkTo}>{navLink.display}</Link>
 				</li>
 			)
 	)
-	return { navLinks }
+
+	return <ul className='flex c g2'>{navLinks}</ul>
 }
 
 export default NavMenu

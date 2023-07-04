@@ -1,6 +1,6 @@
 #brand {
 	font-family: 'Oxanium', sans-serif;
-	font-size: clamp(2rem, 4vw, 4rem);
+	font-size: clamp(2rem, 4vw, 3rem);
 	color: var(--clr-text);
 	text-decoration: none;
 	transition: color 180ms ease;
@@ -9,4 +9,9 @@
 #brand:hover {
 	color: var(--clr-highlight);
 	transition: color 180ms ease;
+}
+
+.nav-link {
+	font-size: clamp(1rem, 2vw, 1.25rem);
+	font-weight: 600;
 }

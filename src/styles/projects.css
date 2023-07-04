@@ -76,7 +76,7 @@
 }
 
 .project-card__desc {
-	font-weight: 600;
+	font-weight: 400;
 	line-height: 1.45;
 	color: var(--clr-card-text);
 }

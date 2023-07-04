@@ -46,10 +46,10 @@
 		--clr-bg-xlight: hsl(198 60% 72%);
 		--clr-bg-xxlight: hsl(198 45% 90%); */
 		--clr-text: hsl(60 45% 90%);
-		--clr-card: hsl(198 18% 9%);
+		/* --clr-card: hsl(198 18% 9%);
 		--clr-card-shadow: hsl(198 18% 9% / 0.67);
 		--clr-card-text: hsl(60 45% 90%);
-		--clr-card-text-shadow: hsl(0 0% 3% / 0.67);
+		--clr-card-text-shadow: hsl(0 0% 3% / 0.67); */
 		--clr-highlight: hsl(29 74% 54%);
 		--clr-secondary: hsl(45 45% 54%);
 		--clr-visited: hsl(276 99% 72%);
@@ -67,7 +67,7 @@ html {
 	scroll-behavior: smooth;
 }
 
-body {
+.body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
@@ -95,10 +95,20 @@ nav {
 
 main {
 	flex-grow: 1;
+	width: min(1280px, 95%);
+	margin: 9rem auto;
 }
 
 ul {
 	list-style: none;
+}
+
+h2 {
+	font-size: clamp(2rem, 2.5vw, 2.5rem);
+}
+
+h3 {
+	font-size: clamp(1.5rem, 2vw, 2rem);
 }
 
 dialog {
@@ -144,23 +154,30 @@ footer {
 	gap: 1rem;
 }
 
+.g2 {
+	gap: 2rem;
+}
+
 .flexd-column {
 	flex-direction: column;
 }
 
-.main {
-	width: min(1280px, 95%);
-	margin: 9rem auto;
+.info {
+	width: min(65ch, 100%);
+	line-height: 1.5;
+	margin: 3rem 0;
 }
 
-.info {
-	width: min(55ch, 100%);
-	line-height: 1.5;
-	margin: 3rem auto;
-	padding: 2rem;
-	background-color: var(--clr-primary-section);
-	border: 3px solid var(--clr-primary-highlight);
-	border-radius: 0.5rem;
+.info-subtitle {
+	margin-top: 2rem;
+}
+
+.info-body {
+	margin-top: 2rem;
+}
+
+.info-body *+* {
+	margin-top: 1.25rem;
 }
 
 .external-links {
