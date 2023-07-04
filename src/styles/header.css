@@ -1,6 +1,7 @@
 #brand {
 	font-family: 'Oxanium', sans-serif;
 	font-size: clamp(2rem, 4vw, 3rem);
+	font-weight: 400;
 	color: var(--clr-text);
 	text-decoration: none;
 	transition: color 180ms ease;

@@ -2,7 +2,7 @@ import React from "react"
 import { Link } from "gatsby"
 
 const NavMenu = ({ navItem }) => {
-	const navLinks = navItem.map(
+	const navLinks = navItem?.map(
 		(navLink) =>
 			navLink.visible && (
 				<li key={navLink.id} className='nav-link'>

@@ -20,15 +20,15 @@ const Header = () => {
 		}
 	`)
 
-	const headerData = data.strapiHeader
-	const navItem = headerData.nav
+	const headerData = data?.strapiHeader
+	const navItem = headerData?.nav
 
 	return (
 		<header className='flex sb'>
 			<nav>
 				<h1>
 					<Link to='/' id='brand'>
-						{headerData.brand}
+						{headerData?.brand}
 					</Link>
 				</h1>
 				<NavMenu navItem={navItem} />

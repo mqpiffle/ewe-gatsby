@@ -84,8 +84,7 @@ header {
 }
 
 nav {
-	width: 100%;
-	padding: 3rem;
+	width: min(1280px, 95%);
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -96,7 +95,7 @@ nav {
 main {
 	flex-grow: 1;
 	width: min(1280px, 95%);
-	margin: 9rem auto;
+	margin: 7rem auto;
 }
 
 ul {
@@ -165,11 +164,12 @@ footer {
 .info {
 	width: min(65ch, 100%);
 	line-height: 1.5;
-	margin: 3rem 0;
+	margin: 0;
 }
 
 .info-subtitle {
 	margin-top: 2rem;
+	font-weight: 400;
 }
 
 .info-body {
