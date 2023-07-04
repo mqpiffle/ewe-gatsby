@@ -171,6 +171,12 @@ footer {
 	font-family: 'Comfortaa', sans-serif;
 	font-weight: 400;
 	font-size: clamp(2.25rem, 3vw, 3rem);
+	filter: drop-shadow(5px 5px 5px var(--clr-highlight));
+	transition: all 180ms ease-out;
+}
+
+.info-title:hover {
+	filter: drop-shadow(1px 1px 0 var(--clr-highlight));
 }
 
 .info-subtitle {
